@@ -1,0 +1,9 @@
+body { background: #050505; color: #eee; font-family: sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; }
+.box { background: #111; padding: 40px; border-radius: 15px; border: 1px solid #222; width: 320px; text-align: center; }
+input { width: 100%; padding: 12px; margin: 15px 0; background: #1a1a1a; color: #fff; border: 1px solid #333; }
+button { width: 100%; padding: 15px; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; }
+.bg-red { background: #ff0013; color: #fff; }
+.bg-green { background: #00ff88; color: #000; }
+.amount { font-size: 38px; font-weight: bold; color: #00ff88; }
+.reward-frame { border: 2px dashed #333; padding: 20px; border-radius: 10px; margin: 20px 0; }
+.result { margin-top: 20px; font-size: 10px; color: #00ff88; word-break: break-all; }
